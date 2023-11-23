@@ -1,4 +1,4 @@
-import UserNumber from '../src/domain/UserNumber';
+import UserNumber from '../src/domain/UserNumber.js';
 
 describe('UserNumber 클래스 테스트', () => {
   let userNumber;
