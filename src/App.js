@@ -1,10 +1,12 @@
-const MissionUtils = require("@woowacourse/mission-utils");
-const { totalGame } = require('./playing/totalgame');
+import BaseballGame from './controller/BaseballGame.js';
 
 class App {
+  constructor() {
+    this.baseballGame = new BaseballGame();
+  }
+
   async play() {
-    MissionUtils.Console.print('숫자 야구 게임을 시작합니다.');
-    await totalGame();
+    await this.baseballGame.startBaseballGame();
   }
 }
 
