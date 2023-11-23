@@ -29,8 +29,8 @@ class UserNumber {
     const checkedBall = this.countBall();
     const textMessage = [];
 
-    if (checkedBall !== 0) textMessage.push(MESSAGE.strike(checkedStrike));
-    if (checkedStrike !== 0) textMessage.push(MESSAGE.ball(checkedBall));
+    if (checkedBall !== 0) textMessage.push(MESSAGE.ball(checkedBall));
+    if (checkedStrike !== 0) textMessage.push(MESSAGE.strike(checkedStrike));
     if (textMessage.length === 0) textMessage.push(MESSAGE.nothing);
 
     return textMessage;
