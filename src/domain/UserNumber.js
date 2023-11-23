@@ -12,21 +12,21 @@ class UserNumber {
     this.#computerNumber = randomNumbers;
   }
 
-  countStrike() {
-    return this.#humanNumber.reduce((accumulator, number, index) => {
-      return number === this.#computerNumber[index] ? accumulator + 1 : accumulator;
+  countStrike(humanNumber, computerNumber) {
+    return humanNumber.reduce((accumulator, number, index) => {
+      return number === computerNumber[index] ? accumulator + 1 : accumulator;
     }, 0);
   }
 
-  countBall() {
-    return this.#humanNumber.reduce((accumulator, number, index) => {
-      return (number !== this.#computerNumber[index]) && (this.#computerNumber.includes(number)) ? accumulator + 1 : accumulator;
+  countBall(humanNumber, computerNumber) {
+    return humanNumber.reduce((accumulator, number, index) => {
+      return (number !== computerNumber[index]) && (computerNumber.includes(number)) ? accumulator + 1 : accumulator;
     }, 0);
   }
 
   getScore() {
-    const checkedStrike = this.countStrike();
-    const checkedBall = this.countBall();
+    const checkedStrike = this.countStrike(this.#humanNumber, this.#computerNumber);
+    const checkedBall = this.countBall(this.#humanNumber, this.#computerNumber);
     const textMessage = [];
 
     if (checkedBall !== 0) textMessage.push(MESSAGE.ball(checkedBall));
