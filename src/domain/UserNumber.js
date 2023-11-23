@@ -11,4 +11,30 @@ class UserNumber {
     this.#humanNumber = [...inputNumbers].map(stringNumber => +stringNumber);
     this.#computerNumber = randomNumber;
   }
+
+  countStrike() {
+    return this.#humanNumber.reduce((accumulator, number, index) => {
+      return number === this.#computerNumber[index] ? accumulator + 1 : accumulator;
+    }, 0);
+  }
+
+  countBall() {
+    return this.#humanNumber.reduce((accumulator, number, index) => {
+      return (number !== this.#computerNumber[index]) && (this.#computerNumber.includes(number)) ? accumulator + 1 : accumulator;
+    }, 0);
+  }
+
+  getScore() {
+    const checkedStrike = this.countStrike();
+    const checkedBall = this.countBall();
+    const textMessage = [];
+
+    if (checkedBall !== 0) textMessage.push(MESSAGE.strike(checkedStrike));
+    if (checkedStrike !== 0) textMessage.push(MESSAGE.ball(checkedBall));
+    if (textMessage.length === 0) textMessage.push(MESSAGE.nothing);
+
+    return textMessage;
+  }
 }
+
+export default UserNumber;
