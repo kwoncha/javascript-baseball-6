@@ -1,5 +1,13 @@
+import BaseballGame from './controller/BaseballGame.js';
+
 class App {
-  async play() { }
+  constructor() {
+    this.baseballGame = new BaseballGame();
+  }
+
+  async play() {
+    await this.baseballGame.startBaseballGame();
+  }
 }
 
 export default App;
