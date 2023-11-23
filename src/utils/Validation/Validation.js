@@ -16,3 +16,5 @@ class Validation {
     return INPUT_NUMBERS.test(number);
   }
 }
+
+export default Validation;
