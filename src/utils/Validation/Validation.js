@@ -3,7 +3,7 @@ import MESSAGE from '../../constants/message.js';
 
 class Validation {
   isValidBaseballNumber(number) {
-    if (this.isValidBaseballNumberType(number)) throw new Error(MESSAGE.ERROR.notValidNumber);
+    if (!this.isValidBaseballNumberType(number)) throw new Error(MESSAGE.ERROR.notValidNumber);
   }
 
   isValidRestartNumber(number) {
