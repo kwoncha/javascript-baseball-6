@@ -9,6 +9,8 @@ const creatRandomNumber = () => {
       computer.push(number);
     }
   }
+
+  return computer;
 };
 
 export default creatRandomNumber;

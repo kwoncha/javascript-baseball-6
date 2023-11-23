@@ -1,15 +1,16 @@
 import MESSAGE from '../constants/message.js';
 import Validation from '../utils/Validation/Validation.js';
+import creatRandomNumber from './RandomNumber.js';
 
 class UserNumber {
   #humanNumber;
   #computerNumber;
 
-  constructor(inputNumbers, randomNumber) {
+  constructor(inputNumbers) {
     this.validate = new Validation();
     this.validate.isValidBaseballNumber(inputNumbers);
     this.#humanNumber = [...inputNumbers].map(stringNumber => +stringNumber);
-    this.#computerNumber = randomNumber;
+    this.#computerNumber = creatRandomNumber();
   }
 
   countStrike() {
