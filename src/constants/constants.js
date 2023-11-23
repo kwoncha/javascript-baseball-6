@@ -1,4 +1,4 @@
-import deepFreeze from '../utils/deepFreeze/deepFreeze';
+import deepFreeze from '../utils/deepFreeze/deepFreeze.js';
 
 const INPUT_NUMBERS = /^(?!.*0)(?!.*(\d).*\1)\d{3}$/;
 
